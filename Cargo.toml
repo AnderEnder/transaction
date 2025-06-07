@@ -1,0 +1,19 @@
+[package]
+name = "transaction"
+authors = ["Andrii Radyk <ander.ender@gmail.com>"]
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+csv = "1.2"
+rust_decimal = { version = "1.37", features = ["macros"] }
+thiserror = "2"
+
+[profile.dev]
+debug = false
+
+[profile.release]
+strip = true
+lto = "fat"
+codegen-units = 1
